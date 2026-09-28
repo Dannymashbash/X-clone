@@ -36,7 +36,7 @@ header{
     padding-bottom: 25px;
 }
 
-.tweet-input-area {
+.x-input-area {
     display: flex;
     align-items: flex-start;
     gap: 10px;
@@ -52,6 +52,7 @@ textarea{
     width: 100%;
     font-size: 20px;
     line-height: 30px;
+    resize: none;
 }
 
 button{
@@ -68,32 +69,32 @@ button{
 
 /* tweet */
 
-.tweet{
+.x{
     border-top: 1px solid lightgray;
     padding: 20px 0 0 0;
     width: 100%;
     margin: 15px 0;
 }
 
-.tweet-inner{
+.x-inner{
     display: flex;
     align-items: flex-start;
     gap: 10px;
 }
 
-.tweet-details{
+.x-details{
     display: flex;
     font-size: 13px;
     justify-content: space-between;
     width: 160px;
 }
 
-.tweet-detail{
+.x-detail{
     display: flex;
     gap: 4px;
 }
 
-.tweet-reply{
+.x-reply{
     border-top: 1px solid lightgray;
     padding: 20px 0 0 0px;
     margin: 10px 0 10px 40px;
@@ -107,7 +108,7 @@ button{
     margin-top: 0;
 }
 
-.tweet-text{
+.x-text{
     width: 207px;
     font-size: 14px;
     line-height: 20px;
