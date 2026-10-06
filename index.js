@@ -10,7 +10,8 @@ xBtn.addEventListener('click', function () {
 function getFeedHtml() {
 
     let feedHtml = ``
-    for (let x of xData) {
+
+    xData.forEach(function (x) {
         feedHtml += `
                 <div class="tweet">
             <div class="tweet-inner">
@@ -33,10 +34,14 @@ function getFeedHtml() {
             </div>
         </div>
         `
-    }
-    console.log(feedHtml)
+    })
+
+    return feedHtml
 }
 
+function render() {
+    document.getElementById('feed').innerHTML = getFeedHtml()
+}
 
-getFeedHtml()
+render()
 
