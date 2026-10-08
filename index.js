@@ -21,12 +21,15 @@ function getFeedHtml() {
                     <p class="tweet-text">${x.tweetText} </p>
                     <div class="tweet-details">
                         <span class="tweet-detail">
+                         <i class="fa-regular fa-comment-dots"></i>
                             ${x.replies.length} 
                         </span>
                         <span class="tweet-detail">
+                         <i class="fa-solid fa-heart"></i>
                              ${x.likes}
                         </span>
                         <span class="tweet-detail">
+                         <i class="fa-solid fa-retweet"></i>
                              ${x.retweets}
                         </span>
                     </div>   
