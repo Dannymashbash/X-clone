@@ -1,10 +1,29 @@
-import { xData } from '/data.js'
+import { xData } from './data.js'
+import { v4 as uuidv4 } from 'https://cdn.jsdelivr.net/npm/uuid@9.0.1/+esm'
 
-const xInput = document.getElementById('x-input')
+
 const xBtn = document.getElementById('x-btn')
 
 xBtn.addEventListener('click', function () {
-    console.log(xInput.value)
+
+    const xInput = document.getElementById('x-input')
+
+    if (xInput.value != '') {
+        xData.unshift({
+            handle: `@Scrimba`,
+            profilePic: `images/scrimbalogo.png`,
+            likes: 0,
+            retweets: 0,
+            tweetText: xInput.value,
+            replies: [],
+            isLiked: false,
+            isRetweeted: false,
+            uuid: uuidv4()
+        })
+
+        render()
+        xInput.value = ''
+    }
 })
 
 document.addEventListener('click', function (event) {
@@ -12,7 +31,7 @@ document.addEventListener('click', function (event) {
         handleLikeClick(event.target.dataset.like)
     } else if (event.target.dataset.retweet) {
         handleRetweetClick(event.target.dataset.retweet)
-    } else if(event.target.dataset.reply){
+    } else if (event.target.dataset.reply) {
         handleReplyClick(event.target.dataset.reply)
     }
 })
@@ -49,8 +68,8 @@ function handleRetweetClick(retweetId) {
     render()
 }
 
-function handleReplyClick(replyId){
-document.getElementById(`replies-${replyId}`).classList.toggle('hidden')
+function handleReplyClick(replyId) {
+    document.getElementById(`replies-${replyId}`).classList.toggle('hidden')
 }
 
 
@@ -74,7 +93,7 @@ function getFeedHtml() {
         let repliesHtml = ''
 
         if (x.replies.length > 0) {
-            x.replies.forEach(function(reply){
+            x.replies.forEach(function (reply) {
                 repliesHtml += `
                 <div class="x-reply">
                     <div class="x-inner">
@@ -87,7 +106,7 @@ function getFeedHtml() {
                 </div>
                 `
             })
-            
+
 
         }
 
